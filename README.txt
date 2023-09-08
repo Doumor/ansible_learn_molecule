@@ -19,7 +19,7 @@ $ source molecule/bin/activate
 
 0.1. Установить зависимости
 
-Установить python3, ansible, molecule
+Установить python3, ansible, molecule, docker
 
 0.2. Создать вирутальное окружения и доустановить внесистемные зависимости
 
