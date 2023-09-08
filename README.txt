@@ -59,7 +59,7 @@ platforms:
 
 3.1 Тестирование
 Запускаю:
-$ molecule converage
+$ molecule converge
 $ molecule verify
 
 И радуюсь выводу!
