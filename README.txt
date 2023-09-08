@@ -31,7 +31,7 @@ $ pip3 install "molecule[lint,ansible,docker]" && pip3 install molecule-docker
 
 $ mkdir roles
 $ cd roles
-$ molecule init role my.webapp --driver-name=docker
+$ molecule init role my.development-env-go --driver-name=docker
 
 0.4. Настройка для docker
 Внутри файла ./roles/webapp/molecule/default/molecule.yml меняю платформу на ubuntu от geerlingguy. В стандартной поставке не стоит python, поэтому ansible падает.
