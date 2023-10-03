@@ -15,10 +15,10 @@ jobs:
 #          - ubuntu-20.04
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with: ${{ github.repository }}
-          
+    - uses: actions/checkout@v3
+      with:
+        path: "${{ github.repository }}"
+    
     - name: Setup Molecule
       uses: bec-galaxy/setup-molecule@v1
 
