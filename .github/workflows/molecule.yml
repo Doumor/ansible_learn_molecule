@@ -16,7 +16,7 @@ jobs:
     
     steps:
     - name: Setup Molecule
-      uses: bec-galaxy/setup-molecule@{Version}
+      uses: bec-galaxy/setup-molecule@v1
 
     - name: Run Molecule tests
       run: molecule test
