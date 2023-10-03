@@ -19,6 +19,7 @@ jobs:
       uses: bec-galaxy/setup-molecule@v1
 
     - name: Run Molecule tests
+      working-directory: ./roles/development-env-go
       run: molecule test
  #     - name: Checkout
  #       uses: actions/checkout@v3
