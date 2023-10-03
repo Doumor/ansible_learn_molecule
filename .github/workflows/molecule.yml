@@ -1,31 +1,36 @@
-name: CI
+name: Molecule
 on: workflow_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        scenario:
-          - centos-8
-          - debian-10
-          - fedora-34
-          - oraclelinux-8
-          - ubuntu-20.04
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        scenario:
+#          - centos-8
+#          - debian-10
+#          - fedora-34
+#          - oraclelinux-8
+#          - ubuntu-20.04
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: "${{ github.repository }}"
-      - name: Molecule
-        uses: gofrolist/molecule-action@v2
-        with:
-          molecule_working_dir: "${{ github.repository }} /roles/development-env-go"
-          molecule_options: --debug --base-config molecule/_shared/base.yml
-          molecule_command: test
-          molecule_args: --scenario-name ${{ matrix.scenario }}
-        env:
-          ANSIBLE_FORCE_COLOR: '1'
-          
+    - name: Setup Molecule
+      uses: bec-galaxy/setup-molecule@{Version}
+
+    - name: Run Molecule tests
+      run: molecule test
+ #     - name: Checkout
+ #       uses: actions/checkout@v3
+ #       with:
+ #         path: "${{ github.repository }}"
+ #     - name: Molecule
+ #       uses: gofrolist/molecule-action@v2
+ #       with:
+ #         molecule_working_dir: "${{ github.repository }} /roles/development-env-go"
+ #         molecule_options: --debug --base-config molecule/_shared/base.yml
+ #         molecule_command: test
+ #         molecule_args: --scenario-name ${{ matrix.scenario }}
+ #       env:
+ #         ANSIBLE_FORCE_COLOR: '1'
+      
