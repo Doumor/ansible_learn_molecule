@@ -22,7 +22,7 @@ jobs:
       - name: Molecule
         uses: gofrolist/molecule-action@v2
         with:
-          molecule_working_dir: "${{ github.repository }}"
+          molecule_working_dir: "${{ github.repository }} /roles/development-env-go"
           molecule_options: --debug --base-config molecule/_shared/base.yml
           molecule_command: test
           molecule_args: --scenario-name ${{ matrix.scenario }}
