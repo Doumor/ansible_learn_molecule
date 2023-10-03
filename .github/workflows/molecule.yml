@@ -29,7 +29,7 @@ jobs:
       run: ls -a
 
     - name: Run Molecule tests
-      working-directory: roles/development-env-go
+      working-directory: Doumor/ansible_learn_molecule/roles/development-env-go
       run: molecule test
  #     - name: Checkout
  #       uses: actions/checkout@v3
