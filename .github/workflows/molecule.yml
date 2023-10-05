@@ -30,7 +30,7 @@ jobs:
 
     - name: Run Molecule tests
       working-directory: Doumor/ansible_learn_molecule/roles/development-env-go
-      run: molecule test
+      run: molecule verify
  #     - name: Checkout
  #       uses: actions/checkout@v3
  #       with:
