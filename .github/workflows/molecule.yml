@@ -27,8 +27,12 @@ jobs:
 
     - name: ls
       run: ls -a
+      
+    - name: Run Molecule concerge
+      working-directory: Doumor/ansible_learn_molecule/roles/development-env-go
+      run: molecule converge
 
-    - name: Run Molecule tests
+    - name: Run Molecule verify
       working-directory: Doumor/ansible_learn_molecule/roles/development-env-go
       run: molecule verify
  #     - name: Checkout
